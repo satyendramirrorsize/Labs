@@ -1,0 +1,22 @@
+{
+  "jobs": [
+    {
+      "id": 1,
+      "title": "UX / UI Engineer",
+      "description": "We are looking for a good UX / UI engineer with a great creative mind to join our team. ",
+      "nature": "Part-Time"
+    },
+    {
+      "id": 2,
+      "title": "Front-end Engineer",
+      "description": "We're seeking a talented Front-End Engineer with a strong creative flair to join our team.",
+      "nature": "Part-Time"
+    },
+    {
+      "id": 3,
+      "title": "Back-end Engineer",
+      "description": "Seeking a Backend Engineer with a passion for robust solutions to join our dynamic team.",
+      "nature": "Part-Time"
+    }
+  ]
+}
