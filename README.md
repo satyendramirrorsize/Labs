@@ -1,5 +1,5 @@
 
-# ConnectedDots Web
+# 🚀 ConnectedDots Web 🚀
 
 ConnectedDots Web is a modern, responsive website for a startup tech company, built using HTML, CSS, JavaScript, Bootstrap, Particle.js, and JSON. It is designed to deliver an engaging and interactive user experience.
 
