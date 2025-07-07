@@ -63,9 +63,13 @@ html {
 .custom-toggler {
   font-size: 25px !important;
 }
-.logo-brand {
+/* .logo-brand {
   width: 120px;
   height: auto;
+} */
+ .logo-brand {
+    width: 65px;
+    height: auto;
 }
 .navbar-logo {
   display: flex;
