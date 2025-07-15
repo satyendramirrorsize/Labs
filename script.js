@@ -1,3 +1,70 @@
+  document.addEventListener('DOMContentLoaded', () => {
+    const slider = document.querySelector('.feature-slider');
+    const track = document.querySelector('.feature-track');
+    const prevBtn = document.getElementById('prevFeatureBtn');
+    const nextBtn = document.getElementById('nextFeatureBtn');
+
+    let currentIndex = 0;
+    const cardWidth = 350; // Adjust if your actual card + margin is different
+
+    // Button navigation
+    nextBtn.addEventListener('click', () => {
+      currentIndex++;
+      const maxIndex = track.children.length - 1;
+      if (currentIndex > maxIndex) currentIndex = maxIndex;
+      track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+    });
+
+    prevBtn.addEventListener('click', () => {
+      currentIndex--;
+      if (currentIndex < 0) currentIndex = 0;
+      track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+    });
+
+    // Mouse drag scroll
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+
+    slider.addEventListener('mousedown', (e) => {
+      isDown = true;
+      slider.classList.add('grabbing');
+      startX = e.pageX - slider.offsetLeft;
+      scrollLeft = slider.scrollLeft;
+    });
+
+    slider.addEventListener('mouseleave', () => {
+      isDown = false;
+      slider.classList.remove('grabbing');
+    });
+
+    slider.addEventListener('mouseup', () => {
+      isDown = false;
+      slider.classList.remove('grabbing');
+    });
+
+    slider.addEventListener('mousemove', (e) => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - slider.offsetLeft;
+      const walk = (x - startX) * 2; // scroll speed
+      slider.scrollLeft = scrollLeft - walk;
+    });
+
+    // Mobile touch scroll
+    let touchStartX = 0;
+    slider.addEventListener('touchstart', (e) => {
+      touchStartX = e.touches[0].clientX;
+    });
+
+    slider.addEventListener('touchmove', (e) => {
+      const touchX = e.touches[0].clientX;
+      const delta = touchStartX - touchX;
+      slider.scrollLeft += delta;
+      touchStartX = touchX;
+    });
+  });
+
 
 document.addEventListener("DOMContentLoaded", () => {
   initParticles("particle-js-2");
@@ -686,3 +753,5 @@ document
         }
       );
   });
+
+

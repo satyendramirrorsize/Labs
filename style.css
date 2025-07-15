@@ -240,7 +240,7 @@ html {
 }
 
 .flex-tile-content>h2 {
-  background:white;
+  background: linear-gradient(180deg, #2e5cb0, #ab4cad);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -463,7 +463,7 @@ html {
 
 .career-btn {
   z-index: 1;
-  width: 120px !important;
+  /* width: 120px !important; */
   height: 45px !important;
   font-size: 18px !important;
   font-weight: 600 !important;
@@ -1066,4 +1066,49 @@ object-fit: cover;
   border-radius: 50%;
   object-fit: cover;
   margin-right: 10px;
+}
+
+/*------ Why work with us section ----------*/
+
+.work_image{
+width: 140px;
+height: 140px;
+}
+
+/*------ Industry section ----------*/
+
+.feature-slider {
+  overflow: hidden;
+  width: 100%;
+}
+
+.feature-track {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.feature-card {
+  min-width: 300px;
+  max-width: 350px;
+  flex-shrink: 0;
+  /* background-color: #ffffff; */
+  color: #333;
+  border-radius: 15px;
+}
+
+.feature-card i {
+  color: #6c63ff;
+}
+
+@media (max-width: 768px) {
+  .feature-card {
+    min-width: 80%;
+  }
+}
+
+.feature-slider .project-card:hover {
+    transform: none !important;
+}
+.feature-slider .project-card ul li {
+    text-align: left;
 }
