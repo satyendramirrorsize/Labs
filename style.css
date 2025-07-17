@@ -150,7 +150,7 @@ html {
 /*----------- Section 2 ------------*/
 .section-2 {
   height: 100%;
-  padding-block: 60px;
+  /* padding-block: 60px; */
   background-color: #000000;
   background-image: url(./images/bg-im.png);
   background-repeat: no-repeat;
@@ -163,7 +163,13 @@ html {
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 100vh;
+  height: 100%;
+}
+
+.home-content-2-parent .service-content-sub {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 40px;
 }
 
 .home-content-2-main {
@@ -201,8 +207,10 @@ html {
 .flex-tile {
   padding: 5px;
   width: 100%;
-  height: 200px;
+  height: 100%;
+  padding: 10px;
   display: flex;
+  align-items: center;
   gap: 5px;
   border-radius: 10px;
   background-color: rgb(48, 48, 48, 0.3);
@@ -257,10 +265,16 @@ html {
   color: gray;
 }
 
+@media screen and (max-width: 1024px) {
+.flex-tile-content>p {
+  font-size: 14px;
+}
+}
+
 /*--------- Section 3 -> SERVICES ---------*/
 /*--------- Section 3 ---------*/
 .section-3 {
-  min-height: 100vh;
+  min-height: 100%;
   background-color: #000000;
   background-image: url(./images/bg-im.png);
   background-repeat: no-repeat;
@@ -398,7 +412,7 @@ html {
 /*--------- Section 4 -> CAREERS ---------*/
 /*--------- Section 4 ---------*/
 .section-4 {
-  height: 100vh;
+  height: 100%;
   background-color: #000000;
 }
 
@@ -416,7 +430,7 @@ html {
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 100vh;
+  /* height: 100vh; */
 }
 
 .career-content-main {
@@ -486,7 +500,7 @@ html {
 /*--------- Section 5 -> CONTACTUS ---------*/
 /*--------- Section 5 ---------*/
 .section-5 {
-  height: 100vh;
+  height: 100%;
   background-color: #000000;
   background-image: url(./images/bg-im.png);
   background-repeat: no-repeat;
@@ -1111,4 +1125,8 @@ height: 140px;
 }
 .feature-slider .project-card ul li {
     text-align: left;
+}
+
+.container_wrapper{
+  padding-block: 80px;
 }
