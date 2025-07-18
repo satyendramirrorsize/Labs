@@ -1150,12 +1150,33 @@ a {
   height: unset !important;
 }
 
+.contact-content-topic {
+  text-align: left;
+  margin-left: 20px;
+}
+
+.contact-content .contact-btn-holder {
+  justify-content: flex-start;
+}
+
 @media (max-width: 992px) {
   .navbar-collapse {
     background: rgba(255, 255, 255, 0.05);
     padding: 20px;
     border-radius: 15px;
     border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .contact-content-topic {
+    text-align: center;
+    margin-left: 0px;
+  }
+
+  .contact-content .contact-btn-holder {
+    justify-content: center;
+  }
+  .contact-content .project-card {
+    gap: 20px;
   }
 }
 
