@@ -1162,6 +1162,6 @@ a {
 
 @media screen and (max-width: 500px) {
     .container_wrapper {
-        padding-block: 50px;
+        padding-block: 60px;
     }
 }
