@@ -1,70 +1,136 @@
-  document.addEventListener('DOMContentLoaded', () => {
-    const slider = document.querySelector('.feature-slider');
-    const track = document.querySelector('.feature-track');
-    const prevBtn = document.getElementById('prevFeatureBtn');
-    const nextBtn = document.getElementById('nextFeatureBtn');
+// ==========Scroll Process==========
 
-    let currentIndex = 0;
-    const cardWidth = 350; // Adjust if your actual card + margin is different
+// gsap.registerPlugin(ScrollTrigger);
 
-    // Button navigation
-    nextBtn.addEventListener('click', () => {
-      currentIndex++;
-      const maxIndex = track.children.length - 1;
-      if (currentIndex > maxIndex) currentIndex = maxIndex;
-      track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
-    });
+document.querySelectorAll(".scroll_process").forEach(process => {
+  const container = process.querySelector(".scroll_process-inner");
+  const sections = gsap.utils.toArray(container.querySelectorAll("section"));
+  const mask = process.querySelector(".mask");
 
-    prevBtn.addEventListener('click', () => {
-      currentIndex--;
-      if (currentIndex < 0) currentIndex = 0;
-      track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
-    });
+  // Horizontal scroll animation
+  const scrollTween = gsap.to(sections, {
+    xPercent: -100 * (sections.length - 1),
+    ease: "none",
+    scrollTrigger: {
+      trigger: process,
+      pin: true,
+      scrub: 0.3,
+      end: () => "+=" + (container.scrollWidth * 0.8)
 
-    // Mouse drag scroll
-    let isDown = false;
-    let startX;
-    let scrollLeft;
-
-    slider.addEventListener('mousedown', (e) => {
-      isDown = true;
-      slider.classList.add('grabbing');
-      startX = e.pageX - slider.offsetLeft;
-      scrollLeft = slider.scrollLeft;
-    });
-
-    slider.addEventListener('mouseleave', () => {
-      isDown = false;
-      slider.classList.remove('grabbing');
-    });
-
-    slider.addEventListener('mouseup', () => {
-      isDown = false;
-      slider.classList.remove('grabbing');
-    });
-
-    slider.addEventListener('mousemove', (e) => {
-      if (!isDown) return;
-      e.preventDefault();
-      const x = e.pageX - slider.offsetLeft;
-      const walk = (x - startX) * 2; // scroll speed
-      slider.scrollLeft = scrollLeft - walk;
-    });
-
-    // Mobile touch scroll
-    let touchStartX = 0;
-    slider.addEventListener('touchstart', (e) => {
-      touchStartX = e.touches[0].clientX;
-    });
-
-    slider.addEventListener('touchmove', (e) => {
-      const touchX = e.touches[0].clientX;
-      const delta = touchStartX - touchX;
-      slider.scrollLeft += delta;
-      touchStartX = touchX;
-    });
+    }
   });
 
+  // Animate the mask width based on scroll progress
+  ScrollTrigger.create({
+    trigger: process,
+    start: "top top",
+    end: () => "+=" + (container.scrollWidth * 0.8),
+    scrub: 0.3,
+    onUpdate: self => {
+      const progress = self.progress;
+      mask.style.width = `${progress * 100}%`;
+    }
+  });
+
+  // Animate elements inside each section
+  sections.forEach(section => {
+    const animEls = section.querySelectorAll(".anim");
+    if (animEls.length === 0) return;
+
+    // Skip animation for the first section
+  // if (index === 0) {
+  //   gsap.set(animEls, {
+  //     opacity: 1,
+  //     y: 0
+  //   });
+  //   return;
+  // }
+
+    gsap.from(animEls, {
+      y: 0,
+      opacity: 0,
+      duration: 1,
+      ease: "power2.out",
+      stagger: 0.15,
+      scrollTrigger: {
+        trigger: section,
+        containerAnimation: scrollTween,
+        start: "left center",
+      }
+    });
+  });
+});
+
+// ================Home Page Scroll Section===============
+
+document.addEventListener('DOMContentLoaded', () => {
+  const slider = document.querySelector('.feature-slider');
+  const track = document.querySelector('.feature-track');
+  const prevBtn = document.getElementById('prevFeatureBtn');
+  const nextBtn = document.getElementById('nextFeatureBtn');
+
+  let currentIndex = 0;
+  const cardWidth = 350; // Adjust if your actual card + margin is different
+
+  // Button navigation
+  nextBtn.addEventListener('click', () => {
+    currentIndex++;
+    const maxIndex = track.children.length - 1;
+    if (currentIndex > maxIndex) currentIndex = maxIndex;
+    track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+  });
+
+  prevBtn.addEventListener('click', () => {
+    currentIndex--;
+    if (currentIndex < 0) currentIndex = 0;
+    track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+  });
+
+  // Mouse drag scroll
+  let isDown = false;
+  let startX;
+  let scrollLeft;
+
+  slider.addEventListener('mousedown', (e) => {
+    isDown = true;
+    slider.classList.add('grabbing');
+    startX = e.pageX - slider.offsetLeft;
+    scrollLeft = slider.scrollLeft;
+  });
+
+  slider.addEventListener('mouseleave', () => {
+    isDown = false;
+    slider.classList.remove('grabbing');
+  });
+
+  slider.addEventListener('mouseup', () => {
+    isDown = false;
+    slider.classList.remove('grabbing');
+  });
+
+  slider.addEventListener('mousemove', (e) => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - slider.offsetLeft;
+    const walk = (x - startX) * 2; // scroll speed
+    slider.scrollLeft = scrollLeft - walk;
+  });
+
+  // Mobile touch scroll
+  let touchStartX = 0;
+  slider.addEventListener('touchstart', (e) => {
+    touchStartX = e.touches[0].clientX;
+  });
+
+  slider.addEventListener('touchmove', (e) => {
+    const touchX = e.touches[0].clientX;
+    const delta = touchStartX - touchX;
+    slider.scrollLeft += delta;
+    touchStartX = touchX;
+  });
+});
+
+// ===============================
 
 document.addEventListener("DOMContentLoaded", () => {
   initParticles("particle-js-2");
@@ -645,9 +711,9 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 (function () {
-    emailjs.init("pEEOSLXPM24Ko5syi");
-  })();
-  
+  emailjs.init("pEEOSLXPM24Ko5syi");
+})();
+
 
 document
   .getElementById("contactForm")

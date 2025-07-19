@@ -218,8 +218,8 @@ html {
 }
 
 .flex-tile:hover {
-    transform: translateY(-5px);
-    background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.08);
 }
 
 .flex-tile-icon-holder {
@@ -583,7 +583,7 @@ html {
 /*---------->>>>>>>>>>>>>>>>>>>>>>>>>---------*/
 /*--------- Career Page  ---------*/
 .section-1-careers {
-  height: 470px;
+  height: 100vh;
   background-color: #000000;
   background-image: url(./images/bg-im.png);
   background-repeat: no-repeat;
@@ -909,7 +909,7 @@ footer {
 #particle-js-3 {
   position: absolute;
   width: 100%;
-  height: 60%;
+  height: 100%;
   z-index: 1;
 }
 
@@ -1210,4 +1210,100 @@ a {
   .service-detail>p {
     font-size: 18px;
   }
+}
+
+.round-button {
+  backdrop-filter: blur(100px);
+  box-shadow: 0 0 #0000, 0 0 #0000, 0 0 #0000, 0 0 #0000, 2px 4px 16px 0px #f8f8f80f inset;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  background-color: #282828b3;
+  border-color: #ffffff1a;
+  border-radius: 9999px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+
+.bg-greenDot {
+  background-color: #5ff319;
+  width: 6px !important;
+  height: 6px !important;
+  border-radius: 9999px;
+}
+
+/* ============Scroll Process Section=========== */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins:wght@200;400;700&display=swap');
+
+.scroll-section-wrapper {
+  position: relative;
+  overflow-x: hidden;
+  color: white;
+}
+
+.scroll_process {
+  position: relative;
+  width: 100%;
+}
+
+.scroll_process svg {
+  position: absolute;
+  top: 8em;
+  left: 10vw;
+  width: 50vw;
+  z-index: 1;
+  filter: invert(1);
+}
+
+.scroll_process-inner {
+  display: flex;
+  width: 300vw;
+}
+
+.scroll-panel {
+  /* width: 100vw; */
+  padding: 15vw 10vw 8vw 10vw;
+  box-sizing: border-box;
+}
+
+.scroll-panel h1 {
+  font-size: 3rem;
+  margin: 0;
+}
+
+.scroll-panel p {
+  font-size: 1.2rem;
+  max-width: 50vw;
+}
+
+.scroll-panel .col {
+  display: flex;
+  gap: 2em;
+  flex-wrap: wrap;
+}
+
+.mask {
+  /* transition: width 0.2s linear; */
+}
+
+.mask {
+  width: 0%;
+}
+
+.scroll_panel_inner_wrapper {
+  border: 1px solid;
+  padding: 40px 20px;
+  background: rgba(255, 255, 255, 0.05);
+  /* padding: 20px; */
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  /* text-align: center; */
+  transition: transform 0.3s ease;
 }
