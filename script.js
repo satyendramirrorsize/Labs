@@ -61,6 +61,12 @@ document.querySelectorAll(".scroll_process").forEach(process => {
   });
 });
 
+// ============You Can==========
+
+
+
+
+
 // ================Home Page Scroll Section===============
 
 document.addEventListener('DOMContentLoaded', () => {
