@@ -1459,7 +1459,7 @@ a {
   }
 
   .custom-scroll-section section:last-of-type {
-    min-height: 100vh;
+    /* min-height: 100vh; */
     display: flex;
     place-items: center;
     width: 100%;
@@ -1489,6 +1489,13 @@ a {
     padding-inline: 0;
     margin: 0;
     list-style-type: none;
+  }
+
+  .custom-scroll-section ul li {
+margin-bottom: 40px !important;
+  }
+  .custom-scroll-section ul li:last-child {
+margin-bottom: 0px !important;
   }
 
   .custom-scroll-section [data-snap='true'] {
@@ -1521,8 +1528,14 @@ a {
     opacity: 0.5;
   }
 
-  .custom-scroll-section h1 {
+  @media screen and (min-width: 768px) {
+   .custom-scroll-section h1 {
     font-size: clamp(11rem, 11vw, 11rem) !important;
+   }
+    
+  }
+  .custom-scroll-section h1 {
+    /* font-size: clamp(11rem, 11vw, 11rem) !important; */
     /* Example: responsive from 2rem to 8rem */
     text-wrap: pretty;
     line-height: 0.8;
@@ -1663,12 +1676,60 @@ a {
   }
 
 }
-.culture-text-wrapper{
+
+.culture-text-wrapper {
   display: flex;
 }
 
-.culture-text-wrapper > * {
+.culture-text-wrapper>* {
   width: 50%;
 }
 
+.our_value_image {
+  position: absolute;
+  left: 0;
+  top: -15%;
+}
+
+.values_row_wrapper .col-12 {
+  margin-bottom: 80px !important;
+}
+
+.what_you_get .project-card {
+  background-color: unset !important;
+  border: unset !important;
+}
+
+.about_page_talk_to_us .contact-content-sub {
+  font-size: 66px;
+}
+
+.about_page_talk_to_us .contact-content-topic {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 50px
+}
+
+
+@media screen and (max-width: 600px) {
+  .about_page_talk_to_us .contact-content-sub {
+    font-size: 36px;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .about_page_talk_to_us .row.about_page_row {
+    gap: 25px;
+  }
+
+}
+@media screen and (min-width: 600px) {
+.custom-scroll-section h1 {
+    font-size: clamp(8rem, 8vw, 8rem) !important;
+}
+}
+.custom-scroll-section h1 {
+    font-size: clamp(5rem, 5vw, 5rem);
+}
 
