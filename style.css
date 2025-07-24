@@ -1746,3 +1746,11 @@ a {
     display: none;
   }
 }
+
+/* ========Career Page========== */
+#job-container{
+  color: grey;
+}
+#job-container h1{
+  color: #ddd;
+}

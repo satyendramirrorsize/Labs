@@ -61,12 +61,6 @@ document.querySelectorAll(".scroll_process").forEach(process => {
   });
 });
 
-// ============You Can==========
-
-
-
-
-
 // ================Home Page Scroll Section===============
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -143,6 +137,9 @@ document.addEventListener("DOMContentLoaded", () => {
   initParticles("particle-js-6");
 });
 
+
+// ===============Jobs Section================
+
 const jobsUrl = "./data/jobData.json";
 
 fetch(jobsUrl)
@@ -156,7 +153,7 @@ fetch(jobsUrl)
       jobTile.classList.add("col-12", "col-lg-4", "mt-4");
 
       jobTile.innerHTML = `
-                <div class="job-tile">
+                <div class="project-card">
                     <div class="job-tile-top-header">
                         <div class="job-nature-holder">
                             <div class="job-nature">
@@ -168,7 +165,7 @@ fetch(jobsUrl)
                     <div class="job-tile-content">
                         <div class="job-name">
                             <h1>${job.title}</h1>
-                            <p>ConnectedDots</p>
+                            <p>Mintmind Labs</p>
                             <p>${job.description}</p>
                         </div>
                     </div>
